@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Where in the world?</a>
+            <div class="align-items-center">
+                <p class="m-0 p-2" id="dark-mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                      </svg>
+                      <span> Dark mode</span>
+                  </p>
+            </div>
+        </div>
+      </nav>
+
+
+      <div class="container-fluid mt-4 column-gap-5">
+        <div class="row justify-content-between">
+
+            <div class="col-4">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search for a country..." aria-label="Search" id="search-bar">
+                  </form>
+            </div>
+    
+            <div class="col-4">
+                <select class="form-select" aria-label="Default select example" id="filter-by-region">
+                    <option selected>Filter by region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="row w-100 justify-content-center justify-xxl-content-between opened" id="country-cards">
+
+            <!-- <div class="d-none col-auto col-md-4 col-lg-3 col-xxl-2 m-5 country-card" data-country-flag="template">
+                 <div class="card shadow-sm" style="max-width: 18rem; min-width: 15rem;">
+                     <img src="./materials/Germany.PNG" class="card-img-top" alt="...">
+                     <div class="card-body">
+                       <h5 class="card-title">Card title</h5>
+                       <p class="card-text">Population: <span>1</span></p>
+                       <p class="card-text">Region: <span>1</span></p>
+                       <p class="card-text">Capital: <span>1</span></p>
+                     </div>
+                 </div>
+             </div> -->
+
+            <!-- <div class="col-auto col-md-4 col-lg-3 col-xxl-2 m-5 country-card">
+                 <div class="card shadow-sm" style="max-width: 18rem; min-width: 15rem; min-height: 23rem;">
+                     <img src="./materials/Germany.PNG" class="card-img-top" alt="...">
+                     <div class="card-body">
+                       <h5 class="card-title">Card title</h5>
+                       <p class="card-text">Population: <span></span></p>
+                       <p class="card-text">Region: <span></span></p>
+                       <p class="card-text">Capital: <span></span></p>
+                     </div>
+                 </div>
+             </div>  -->
+        </div>
+
+        <div class="row mt-2 p-5 text-start" id="country-specific-info">
+            <div class="row m-3" id="back">
+                <button type="button" class="btn btn-lg" id="back-btn" style="width: 20rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                      </svg>  Back</button>
+            </div>
+            <div class="d-flex col-12 col-lg-4 align-items-center">
+                <img src="./materials/Germany.PNG" alt="" class="img-fluid" style="width: 100%;" data-country-spec="flags">
+            </div>
+
+            <div class="col-12 col-lg-6 ms-5">
+                <h1 class="h1" data-country-spec="name">Belgium</h1>
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-lg-6" id="main-info">
+                        <p class="h5" >Native Name: <span data-country-spec="nativeName"></span></p>
+                        <p class="h5">Population: <span data-country-spec="population"></span></p>
+                        <p class="h5">Region: <span data-country-spec="region"></span></p>
+                        <p class="h5">Sub Region: <span data-country-spec="subregion"></span></p>
+                        <p class="h5">Capital: <span data-country-spec="capital"></span></p>
+                    </div>
+                    <div class="col-12 col-lg-6" id="extra-info">
+                        <p class="h5">Top Level Domain: <span data-country-spec="tld"></span></p>
+                        <p class="h5">Currencies: <span data-country-spec="currencies"></span></p>
+                        <p class="h5">Languages: <span data-country-spec="languages"></span></p>
+                    </div>
+                    <div class="col-12 justify-content-center my-4" id="border-countries">
+                        <div data-country-spec="borders">
+                            <input type="button" class="btn btn-secondary border-country" value=""></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
