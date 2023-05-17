@@ -2,6 +2,6 @@
 
 - designed by frontendmentor challenge
 - built via bootstrap & restcountries.com api
-- dark mode unfinished due to the fact that im new to bootstrap
+- dark mode unfinished
 
 Live url: https://search-country-info-restcountries-api.netlify.app/
