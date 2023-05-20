@@ -25,17 +25,17 @@
 
 /* dark mode */
 
-#dark-mode {
+.dark-mode-btn {
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
 
-#dark-mode:hover {
+.dark-mode-btn:hover {
     background: grey;
     border-radius: 10px;
 }
 
-#dark-mode:hover, .country-card:hover, .border-country:hover, #back-btn:hover {
+.dark-mode-btn:hover, .country-card:hover, .border-country:hover, #back-btn:hover {
     transform: scale(1.1);
 }
 
