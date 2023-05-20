@@ -199,3 +199,12 @@ backBtn.addEventListener('click', () => {
     document.querySelectorAll('.country-card').forEach(element => element.style.display = "unset");
 })
 
+const darkModeBtn = document.querySelector('.dark-mode-btn')
+
+darkModeBtn.addEventListener('click', () => {
+    document.documentElement.dataset.bsTheme = ( document.documentElement.dataset.bsTheme === 'dark' ) ? 'light' : 'dark'
+    document.querySelector('.navbar').classList.remove
+})
+
+
+
